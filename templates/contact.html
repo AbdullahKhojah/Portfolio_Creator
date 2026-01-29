@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        /* Shared styles come from styles.css */
+    </style>
+</head>
+
+<body>
+<div class="page-container">
+
+    <h1 class="page-title">Contact Information</h1>
+
+    {% if result %}
+    <p class="error-msg">{{ result }}</p>
+    {% endif %}
+
+    <form method="POST">
+
+        <input class="input-field"
+               type="email"
+               name="email"
+               placeholder="Email"
+               value="{{ contact['email'] if contact else '' }}">
+
+        <input class="input-field"
+               type="text"
+               name="phone"
+               placeholder="Phone Number"
+               value="{{ contact['phone'] if contact else '' }}">
+
+        <input class="input-field"
+               type="text"
+               name="linkedin"
+               placeholder="LinkedIn Profile"
+               value="{{ contact['linkedin'] if contact else '' }}">
+
+        <input class="input-field"
+               type="text"
+               name="github"
+               placeholder="GitHub Profile"
+               value="{{ contact['github'] if contact else '' }}">
+
+        <button class="save-btn" type="submit">Save</button>
+    </form>
+
+    <a href="/home" class="back-link">Back to Home</a>
+
+</div>
+</body>
+</html>

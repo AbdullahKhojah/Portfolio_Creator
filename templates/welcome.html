@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <style>
+        body {
+            background: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .welcome-container {
+            max-width: 600px;
+            margin: 120px auto;
+            text-align: center;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+        }
+
+        .welcome-title {
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #7b2ff7, #f107a3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .welcome-subtitle {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .start-btn {
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #7b2ff7, #f107a3);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .start-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(123, 47, 247, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="welcome-container">
+
+    <h1 class="welcome-title">Portfolio Creator</h1>
+
+    <p class="welcome-subtitle">
+        Build your own beautiful and professional portfolio<br>
+        in just a few minutes, simple, fast, and customizable.
+    </p>
+
+    <a href="/login">
+        <button class="start-btn">Get Started</button>
+    </a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        /* Page structure is inherited from styles.css */
+    </style>
+</head>
+
+<body>
+<div class="page-container">
+
+    <h1 class="page-title">About Me</h1>
+
+    {% if result %}
+    <p class="error-msg">{{ result }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <input class="input-field"
+               type="text"
+               name="name"
+               placeholder="Your Name"
+               value="{{ about['name'] if about else '' }}"
+        >
+
+        <input class="input-field"
+               type="text"
+               name="role"
+               placeholder="Your Role"
+               value="{{ about['role'] if about else '' }}"
+        >
+
+        <textarea class="input-field"
+                  name="bio"
+                  placeholder="Short Bio">{{ about['bio'] if about else '' }}</textarea>
+
+        <input class="input-field"
+               type="text"
+               name="skills"
+               placeholder="Skills (comma separated)"
+               value="{{ about['skills'] if about else '' }}"
+        >
+
+        <input class="input-field"
+               type="text"
+               name="education"
+               placeholder="Education"
+               value="{{ about['education'] if about else '' }}"
+        >
+
+        <button class="save-btn" type="submit">Save</button>
+    </form>
+
+    <a href="/home" class="back-link">Back to Home</a>
+</div>
+
+</body>
+</html>

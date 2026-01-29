@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <style>
+        .header-box {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            background: linear-gradient(45deg, #7b2ff7, #f107a3);
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .project-card {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            background: white;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            background: linear-gradient(45deg, #7b2ff7, #f107a3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section h2 {
+    text-align: center;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- About Me Header -->
+        <div class="header-box">
+            <h1>{{ about['name'] }}</h1>
+            <h3>{{ about['role'] }}</h3>
+        </div>
+
+        <!-- About Me -->
+        <div class="section">
+            <h2>About Me</h2>
+            <p><strong>Bio:</strong> {{ about['bio'] }}</p>
+            <p><strong>Skills:</strong> {{ about['skills'] }}</p>
+            <p><strong>Education:</strong> {{ about['education'] }}</p>
+        </div>
+
+        <!-- Projects -->
+        <div class="section">
+            <h2>Projects</h2>
+
+            {% for p in projects %}
+            <div class="project-card">
+                <h3>{{ p['project_name'] }}</h3>
+                <p>{{ p['description'] }}</p>
+                <p><strong>GitHub:</strong> <a href="{{ p['github'] }}" target="_blank">{{ p['github'] }}</a></p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Contact -->
+    <!-- Contact -->
+<div class="section">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> {{ contact['email'] }}</p>
+    <p><strong>Phone:</strong> {{ contact['phone'] }}</p>
+    <p><strong>LinkedIn:</strong> <a href="{{ contact['linkedin'] }}" target="_blank">{{ contact['linkedin'] }}</a></p>
+    <p><strong>GitHub:</strong> <a href="{{ contact['github'] }}" target="_blank">{{ contact['github'] }}</a></p>
+</div>
+
+
+        <a href="/home"><button>Back to Home</button></a>
+
+    </div>
+
+</body>
+</html>

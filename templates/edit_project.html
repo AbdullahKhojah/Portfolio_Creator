@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Edit Project</h1>
+{% if result %}
+<p style="color:red;">{{ result }}</p>
+{% endif %}
+
+        <form method="POST">
+            <input type="text" name="project_name" value="{{ project['project_name'] }}">
+            <textarea name="description">{{ project['description'] }}</textarea>
+            <input type="text" name="github" value="{{ project['github'] }}">
+            <button>Update</button>
+        </form>
+
+        <br>
+        <a href="/projects"><button>Back</button></a>
+    </div>
+</body>
+</html>
